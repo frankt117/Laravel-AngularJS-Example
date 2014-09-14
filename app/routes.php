@@ -13,5 +13,15 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+  return View::make('index');
+});
+
+Route::group(array('prefix' => 'api'), function() {
+  Route::resource('comments', 'CommentController',
+    array('only' => array('index', 'store', 'destroy'))
+  );
+});
+
+App::missing(function($exception) {
+  return View::make('index');
 });
