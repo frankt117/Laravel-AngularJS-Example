@@ -6,7 +6,7 @@
 
     store.products = [];
 
-    $http.get('/products.json').success(function(data) {
+    $http.get('view/product/products.json').success(function(data) {
       console.log(data);
       store.products = data.products;
     });

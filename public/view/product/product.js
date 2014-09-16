@@ -4,14 +4,14 @@
   app.directive('productTile', function() {
     return {
       restrict: 'E',
-      templateUrl: 'product-tile.html'
+      templateUrl: 'view/product/product-tile.html'
     }
   });
 
   app.directive('productPanels', function() {
     return {
       restrict: 'E',
-      templateUrl: 'product-panels.html',
+      templateUrl: 'view/product/product-panels.html',
       controller: function() {
         this.tab = 1;
 

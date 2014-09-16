@@ -3,8 +3,8 @@
 <head>
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-  <script type="text/javascript" src="/app.js"></script>
-  <script type="text/javascript" src="product/product.js"></script>
+  <script type="text/javascript" src="view/app.js"></script>
+  <script type="text/javascript" src="view/product/product.js"></script>
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 <style>
