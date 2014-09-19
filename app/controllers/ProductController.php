@@ -3,13 +3,24 @@
 class ProductController extends \BaseController {
 
   /**
-   * Display a listing of the resource.
+   * Display all products.
    *
    * @return Response
    */
   public function index()
   {
-    return Response::json(Product::get());
+      return Response::json(Product::get());
+  }
+
+  /**
+   * Display product by id.
+   *
+   * * @param  int  $id
+   * @return Response
+   */
+  public function show($id)
+  {
+      return Response::json(Product::where('id', $id)->first());
   }
 
 

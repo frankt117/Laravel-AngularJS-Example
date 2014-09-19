@@ -3,7 +3,7 @@
 class ReviewController extends \BaseController {
 
   /**
-   * Display a listing of the resource.
+   * Display all reviews.
    *
    * @return Response
    */

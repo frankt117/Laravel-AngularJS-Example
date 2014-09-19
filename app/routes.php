@@ -18,10 +18,13 @@ Route::get('/', function()
 
 Route::group(array('prefix' => 'api'), function() {
   Route::resource('products', 'ProductController',
-    array('only' => array('index', 'store', 'destroy'))
+    array('only' => array('index', 'show', 'store', 'destroy'))
   );
   Route::resource('reviews', 'ReviewController',
     array('only' => array('index', 'store', 'destroy'))
+  );
+  Route::resource('products.reviews', 'ProductReviewController',
+    array('only' => array('index', 'show'))
   );
 });
 
