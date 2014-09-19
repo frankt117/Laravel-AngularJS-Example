@@ -9,7 +9,12 @@ class ProductReviewController extends \BaseController {
    */
   public function index($productId)
   {
-    return Response::json(Review::where('productId', $productId)->get());
+    $product = Product::where('id', $productId)->first();
+    $reviews = Review::where('productId', $productId)->get();
+
+    $product["reviews"] = $reviews;
+
+    return $product;
   }
 
   /**

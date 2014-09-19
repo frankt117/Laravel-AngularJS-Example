@@ -6,9 +6,18 @@
 
     store.products = [];
 
-    $http.get('view/product/products.json').success(function(data) {
-      console.log(data);
-      store.products = data.products;
+    $http.get('index.php/api/v1/products').success(function(data) {
+      var products = data;
+
+      for (var i = 0; i < products.length; i++) {
+        products[i].reviews = [];
+        var id = products[i].id;
+        var url = 'index.php/api/v1/products/' + id + '/reviews';
+
+        $http.get(url).success(function(reviewsData) {
+          store.products.push(reviewsData);
+        });
+      }
     });
 
   }]);

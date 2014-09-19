@@ -30,7 +30,7 @@
 
     <div class="gallery">
       <div class="img-wrap">
-        <img ng-src="{{product.images[0]}}">
+        <img ng-src="{{product.imageUrl}}">
       </div>
     </div>
 
