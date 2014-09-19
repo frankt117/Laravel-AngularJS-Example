@@ -1,6 +1,6 @@
 <?php
 
-class CommentController extends \BaseController {
+class ReviewController extends \BaseController {
 
   /**
    * Display a listing of the resource.
@@ -9,7 +9,7 @@ class CommentController extends \BaseController {
    */
   public function index()
   {
-    return Response::json(Comment::get());
+    return Response::json(Review::get());
   }
 
 
@@ -20,9 +20,11 @@ class CommentController extends \BaseController {
    */
   public function store()
   {
-    Comment::create(array(
-      'author' => Input::get('author'),
-      'text' => Input::get('text')
+    Review::create(array(
+      'productId' => Input::get('productId'),
+      'stars' => Input::get('stars'),
+      'body' => Input::get('body'),
+      'author' => Input::get('author')
     ));
 
     return Response::json(array('success' => true));
@@ -37,7 +39,7 @@ class CommentController extends \BaseController {
    */
   public function destroy($id)
   {
-    Comment::destroy($id);
+    Review::destroy($id);
 
     return Response::json(array('success' => true));
   }
