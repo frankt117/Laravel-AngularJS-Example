@@ -17,7 +17,10 @@ Route::get('/', function()
 });
 
 Route::group(array('prefix' => 'api'), function() {
-  Route::resource('comments', 'CommentController',
+  Route::resource('products', 'ProductController',
+    array('only' => array('index', 'store', 'destroy'))
+  );
+  Route::resource('reviews', 'ReviewController',
     array('only' => array('index', 'store', 'destroy'))
   );
 });
