@@ -3,6 +3,6 @@
 class Review extends Eloquent
 {
 
-  protected $fillable = array('imageId', 'stars', 'body', 'author');
+  protected $fillable = array('productId', 'stars', 'body', 'author');
 
 }

@@ -20,12 +20,17 @@ class ReviewController extends \BaseController {
    */
   public function store()
   {
-    Review::create(array(
-      'productId' => Input::get('productId'),
-      'stars' => Input::get('stars'),
-      'body' => Input::get('body'),
-      'author' => Input::get('author')
-    ));
+    try {
+      Review::create(array(
+        'productId' => Input::get('productId'),
+        'stars' => Input::get('stars'),
+        'body' => Input::get('body'),
+        'author' => Input::get('author')
+      ));
+    } catch (Exception $e) {
+      Log::error($e);
+    }
+
 
     return Response::json(array('success' => true));
   }

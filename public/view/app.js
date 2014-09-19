@@ -22,13 +22,19 @@
 
   }]);
 
-  app.controller('ReviewController', function () {
+  app.controller('ReviewController', [ '$http', function ($http) {
     this.review = {};
 
     this.addReview = function(product) {
+      this.review.productId = product.id;
       product.reviews.push(this.review);
+
+      $http.post('index.php/api/v1/reviews', this.review).success(function($msg) {
+        console.log($msg);
+      });
+
       this.review = {};
     };
-  });
+  }]);
 
 })();
